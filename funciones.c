@@ -3,6 +3,7 @@
 void swap (int *a , int * b ) ;
 int longitudCadena ( char * cadena ) ;
 void invertirArreglo (int * arr , int size ) ;
+int cuentaPares (int * arr , int size ) ;
 
 // funcion que cambia los valores de dos variables enteras usando punteros
 void swap (int *a , int * b ) {
@@ -35,6 +36,16 @@ void invertirArreglo (int * arr , int size )  {
     }
 }
 
+// funcion que cuenta la cantidad de numeros pares en un arreglo de enteros
+int cuentaPares (int * arr , int size )  {
+    int count = 0 ; // Contador de numeros pares
+    for ( int i = 0 ; i < size ; i++ ) {
+        if ( *(arr + i) % 2 == 0 ) { // Verificamos si el numero es par
+            count++ ; // Incrementamos el contador si es par
+        }
+    }
+    return count ; // Devolvemos la cantidad de numeros pares encontrados
+}
 
 int main () {
     
@@ -67,7 +78,12 @@ int main () {
     printf("\n");
     //fin del uso de la funcion invertirArreglo
 
-
+    // Ejemplo de uso de la funcion cuentaPares
+    int arr2[] = {1, 2, 3, 4, 5, 6};
+    int size2 = sizeof(arr2) / sizeof(arr2[0]); // Calculamos el tamaño del arreglo
+    int cantidadPares = cuentaPares(arr2, size2); // Llamamos a la funcion cuentaPares
+    printf("Cantidad de numeros pares en el arreglo: %d\n", cantidadPares); // Imprimimos la cantidad de numeros pares encontrados
+    //fin del uso de la funcion cuentaPares
     
     return 0;
 }
