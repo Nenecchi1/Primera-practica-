@@ -17,7 +17,7 @@ void swap (int *a , int * b ) {
 int longitudCadena ( char * cadena )  {
     int longitud = 0 ;
     while( *cadena!='\0' ) { // Recorremos la cadena hasta encontrar el caracter nulo
-        longitud++; // Incrementamos la longitud por cada caracter no nulo
+        longitud++; // Incrementamos el contador de longitud
         cadena++ ; // Avanzamos al siguiente caracter
     }
     return longitud ; // Devolvemos la longitud calculada
